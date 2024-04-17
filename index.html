@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harrow Council</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Bootstrap CSS for responsive design -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .logo-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .logo {
+        height: 50px;
+        width: auto;
+        margin: 10px;
+      }
+      .graphic-design-section {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .graphic-design-section h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      .graphic-design-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .image-placeholder {
+        width: 100%;
+        height: 300px;
+        background-color: #f0f0f0;
+        margin-bottom: 20px;
+      }
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .column {
+        flex: 1 1 50%;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      .bike-info {
+        text-align: center;
+      }
+
+      .bike-info img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .learn-more-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .learn-more-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo-link"
+          ><img src="assets/images/myLogo.jpg" alt="Logo" class="logo"
+        /></a>
+        <h1>HARROW COUNCIL</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="ride.html">Ride</a></li>
+            <li><a href="signUp.html">Sign Up</a></li>
+            <li><a href="contribute.html">Contribute</a></li>
+            <li><button id="showMoreBtn">Show More</button></li>
+          </ul>
+          <ul id="additionalNav" style="display: none">
+            <li><a href="contacts.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="image-container">
+        <img src="assets/images/backgroun.jpg" alt="Background Image" />
+      </div>
+      <div class="container" style="background-color: rgba(0, 0, 255, 0.2); border: 2px solid #007bff; border-radius: 20px; padding: 20px;">
+        <div class="content">
+      <h1>Welcome</h1>
+          <p style="color: white">
+            Pedal into Adventure: Where Every Ride Begins
+          </p>
+          <a href="#about" class="btn" style="color: white; border-color: white;">EXPLORE</a>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>Now is the Time Get the Bike</h2>
+        <div class="about-content">
+          <div class="column">
+            <!-- Insert code for the map here -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.586715358356!2d-73.96898238459638!3d40.78081654110756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258a6a2bb131b%3A0xa0d0974b1e029d1b!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1617053353437!5m2!1sen!2sus"
+              width="400"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="column">
+            <div class="bike-info">
+              <img src="assets/images/bike.jpg" alt="Bike Photo" />
+              <p>
+                This hardtail mountain bike buyer's guide is designed to help
+                you get the best value for your money and includes our choices
+                for the best hardtail mountain bikes under $500, $1000, $2000
+                budgets.
+              </p>
+              <p>Price: $500 || $1000 || $2000</p>
+              <a href="signUp.html" class="learn-more-button">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p style="color: white">&copy; Harrow Council 2024. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS for responsive design -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="javaScript/script.js"></script>
+    <script>
+      function scrollToAboutSection() {
+        const aboutSection = document.getElementById("about");
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const getStartedButton = document.querySelector('.btn[href="#about"]');
+        getStartedButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          scrollToAboutSection();
+        });
+      });
+      //read me
+      document.querySelectorAll(".read-more").forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          var extraContent = this.nextElementSibling;
+          if (extraContent.style.display === "none") {
+            extraContent.style.display = "block";
+          } else {
+            extraContent.style.display = "none";
+          }
+        });
+      });
+      //header show more
+      document.addEventListener("DOMContentLoaded", function () {
+        const showMoreBtn = document.getElementById("showMoreBtn");
+        const additionalNav = document.getElementById("additionalNav");
+
+        showMoreBtn.addEventListener("click", function () {
+          if (additionalNav.style.display === "none") {
+            additionalNav.style.display = "block";
+            showMoreBtn.textContent = "Show Less";
+          } else {
+            additionalNav.style.display = "none";
+            showMoreBtn.textContent = "Show More";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
