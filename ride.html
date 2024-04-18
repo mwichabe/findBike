@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+          body {
+            background-image: url('assets/images/backgroundW.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
         .ride-info {
             padding: 50px 0;
         }
-
         .ride-image {
             width: 100%;
             height: auto;
@@ -20,6 +25,7 @@
 
         .ride-content {
             margin-bottom: 40px;
+            color: aliceblue;
         }
         .scroll-link {
             cursor: pointer;
@@ -39,13 +45,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#ride-info">Ride Information</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#like-button">Like</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#rent-button">Rent Bike</a>
+                            <a class="nav-link" href="signUp.html">Rent Bike</a>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +73,7 @@
             <h2>Ride Information</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <img src="assets/images/ride.jpg" alt="Ride Image" class="ride-image">
+                    <img src="assets/images/rent.jpg" alt="Ride Image" class="ride-image">
                 </div>
                 <div class="col-md-6 ride-content">
                     <p>Join us for an exciting biking experience through the beautiful trails of Harrow. Explore
@@ -114,6 +120,11 @@
                     }, 800, function () {
                         window.location.hash = hash;
                     });
+                    // Check if the clicked link is the "Ride Information" link
+                if ($(this).hasClass('ride-info-link')) {
+                    // Show an alert dialog with bike information
+                    alert("Join us for an exciting biking experience through the beautiful trails of Harrow. Explore nature, get some exercise, and have fun with friends and family! Our rides cater to all skill levels, from beginners to advanced riders. Whether you're looking for a leisurely ride or a thrilling adventure, we have something for everyone.");
+                }
                 }
             });
         });
